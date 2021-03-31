@@ -8,6 +8,9 @@
 # env
 /.env
 
+# Firebase config
+/src/components/Login/firebase.config.js
+
 # testing
 /coverage
 

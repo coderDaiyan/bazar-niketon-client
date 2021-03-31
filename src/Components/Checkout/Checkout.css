@@ -1,0 +1,11 @@
+.parent {
+  border: 5px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px gray;
+  margin: 20px;
+  margin-top: 10vh;
+  padding: 20px;
+}
+hr {
+  width: 150%;
+}

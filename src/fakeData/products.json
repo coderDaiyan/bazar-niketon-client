@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Marks Full Cream Milk Powder Foil",
+    "price": 234,
+    "weight": "1kg",
+    "image": "https://i.ibb.co/sQbdj2t/image-32.png"
+  },
+  {
+    "id": 2,
+    "name": "Moushum Bay Leaves",
+    "price": 134,
+    "weight": "200gm",
+    "image": "https://i.ibb.co/s3wcQmK/image-33.png"
+  },
+  {
+    "id": 3,
+    "name": "Onion Local",
+    "price": 434,
+    "weight": "1kg",
+    "image": "https://i.ibb.co/Nn3tNZ3/image-34.png"
+  },
+  {
+    "id": 4,
+    "name": "Rashid Minicate Rice",
+    "price": 334,
+    "weight": "50kg",
+    "image": "https://i.ibb.co/ncQcjJr/image-35.png"
+  },
+  {
+    "id": 5,
+    "name": "Omera LPG Refill",
+    "price": 342,
+    "weight": "12kg",
+    "image": "https://i.ibb.co/3fHS8md/image-36.png"
+  },
+  {
+    "id": 6,
+    "name": "Bombay Sweets Mr.Twist",
+    "price": 132,
+    "weight": "25gm",
+    "image": "https://i.ibb.co/zRrYybb/image-37.png"
+  },
+  {
+    "id": 7,
+    "name": "Lifeboy Soap Bar",
+    "price": 334,
+    "weight": "100gm",
+    "image": "https://i.ibb.co/JxNYLPY/image-38.png"
+  },
+  {
+    "id": 8,
+    "name": "Ruchi BBQ Chanachur",
+    "price": 342,
+    "weight": "350gm",
+    "image": "https://i.ibb.co/31cymM8/image-39.png"
+  },
+  {
+    "id": 9,
+    "name": "Parachute Coconut Oil",
+    "price": 132,
+    "weight": "200ml",
+    "image": "https://i.ibb.co/8D6jTXX/image-40.png"
+  },
+  {
+    "id": 10,
+    "name": "Kellogg's Chocos Chocolate Breakfast Cereal Moons & Stars",
+    "price": 234,
+    "weight": "1kg",
+    "image": "https://i.ibb.co/gF8rcC8/71-Ees-MJm-Iq-L.jpg"
+  },
+  {
+    "id": 11,
+    "name": "7UP Cold Drinks",
+    "price": 85,
+    "weight": "250ml",
+    "image": "https://i.ibb.co/2hFdGpC/seven-up.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Oreo Creamy Chocolate Buscuit",
+    "price": 234,
+    "weight": "150gm",
+    "image": "https://i.ibb.co/kJmZQdH/18125017-408c-4409-8d69-e4482a9c56b0.jpg"
+  }
+]

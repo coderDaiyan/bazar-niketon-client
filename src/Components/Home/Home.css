@@ -1,0 +1,15 @@
+.product-card {
+  padding: 20px;
+  margin: auto;
+  float: none;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 5px 5px 10px lightgrey;
+}
+.buy-now-btn {
+  background-color: #10ac84;
+  margin-top: 10px;
+}
+.spinner {
+  width: 50vw;
+}
