@@ -2,21 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductDetail = ({ product }) => {
-  const { image, name, id } = product;
+  const { image, name, id, price } = product;
   return (
     <>
       <div className="card product-card col-md-4" style={{ width: "18rem" }}>
         <img src={image} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-          <button className="btn buy-now-btn btn-success">
+          <div className="d-flex justify-content-between">
             <Link
               style={{ color: "white", textDecoration: "none" }}
               to={`/checkout/${id}`}
             >
-              Buy Now
+              <button className="btn buy-now-btn btn-success">Buy Now</button>
             </Link>
-          </button>
+            <h4 style={{ marginTop: "15px" }}>${price}</h4>
+          </div>
         </div>
       </div>
     </>

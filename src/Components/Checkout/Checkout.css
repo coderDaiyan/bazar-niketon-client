@@ -2,10 +2,36 @@
   border: 5px solid black;
   border-radius: 20px;
   box-shadow: 5px 5px 10px gray;
-  margin: 20px;
+  margin: 50px;
   margin-top: 10vh;
   padding: 20px;
 }
 hr {
   width: 150%;
+}
+.order-confirm {
+  display: flex;
+}
+.place-order {
+  position: absolute;
+  right: 25px;
+}
+.confirm-img {
+  margin-right: 10px;
+  border-radius: 20px;
+  width: 290px;
+}
+.confirm-text {
+  padding: 20px;
+  color: white;
+  border-radius: 20px;
+  background-color: #222f3e;
+}
+@media (max-width: 777px) {
+  .confirm-img {
+    margin-bottom: 25px;
+  }
+  .order-confirm {
+    display: block;
+  }
 }
