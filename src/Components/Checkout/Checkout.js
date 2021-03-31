@@ -37,6 +37,7 @@ const Checkout = () => {
                 quality and packing of the products and we hope that you will
                 find them highly satisfactory.
                 <br />
+                <br />
                 We thank you again for your kind offer of the products and hope
                 that you will extend your similar co-operation in the future.
               </p>
