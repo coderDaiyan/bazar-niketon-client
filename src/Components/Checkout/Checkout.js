@@ -32,10 +32,10 @@ const Checkout = () => {
             <div className="confirm-text">
               <h1>Congratulations!</h1>
               <p>
-                Dear Sir, Thank you for your order. We are glad to place our
-                first order with you.We have taken special care for the quality
-                and packing of the products and we hope that you will find them
-                highly satisfactory.
+                Dear Sir/Madam, Thank you for your order. We are glad to place
+                our first order with you.We have taken special care for the
+                quality and packing of the products and we hope that you will
+                find them highly satisfactory.
                 <br />
                 We thank you again for your kind offer of the products and hope
                 that you will extend your similar co-operation in the future.
