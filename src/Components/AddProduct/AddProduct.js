@@ -1,17 +1,35 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import swal from "sweetalert";
 import "./AddProduct.css";
 
 const AddProduct = () => {
-  const [imageURL, setImageURL] = useState(null);
-  const { register, handleSubmit, watch, errors } = useForm();
+  const [imageUrl, setImageUrl] = useState(null);
+  const { register, handleSubmit } = useForm();
+  const handleImageUpload = (e) => {
+    const image = e.target.files[0];
+    const imageData = new FormData();
+    imageData.set("key", "a65bfe7d9250b3bf1ebe781e931b3a9d");
+    imageData.append("image", image);
+
+    axios
+      .post("https://api.imgbb.com/1/upload", imageData)
+      .then(function (response) {
+        console.log(response.data.data.display_url);
+        setImageUrl(response.data.data.display_url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
   const onSubmit = (data) => {
     const { productName, productWeight, productPrice } = data;
     const productData = {
       name: productName,
       weight: productWeight,
       price: productPrice,
-      imageURL: imageURL,
+      image: imageUrl,
     };
     fetch("http://localhost:4000/addProduct", {
       method: "POST",
@@ -19,21 +37,11 @@ const AddProduct = () => {
       body: JSON.stringify(productData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-  };
-
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    const fileData = new FormData();
-    fileData.set("key", "f8a4ba4c1854086f3e5c66971eca6267");
-    fileData.append("image", file);
-    fetch("https://api.imgbb.com/1/upload", {
-      method: "POST",
-      body: fileData,
-    })
-      .then((res) => res.json())
-      .then((data) => setImageURL(data.data.url))
-      .catch((err) => console.log(err));
+      .then((data) => {
+        if (data) {
+          swal("Congratulations!", "Product Added!", "success");
+        }
+      });
   };
   return (
     <>
@@ -46,7 +54,7 @@ const AddProduct = () => {
             <input
               className="form-control"
               name="productName"
-              defaultValue="Enter Name"
+              placeholder="Enter Name"
               ref={register({ required: true })}
             />
           </div>
@@ -60,7 +68,7 @@ const AddProduct = () => {
               className="form-control"
               id="productWeightInput"
               ref={register({ required: true })}
-              defaultValue="Enter Weight"
+              placeholder="Enter Weight"
             />
           </div>
           <div className="col-6">
@@ -73,7 +81,7 @@ const AddProduct = () => {
               className="form-control"
               id="productPriceInput"
               ref={register({ required: true })}
-              defaultValue="Enter Price"
+              placeholder="Enter Price"
             />
           </div>
           <div className="col-md-6">

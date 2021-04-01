@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductDetail = ({ product }) => {
-  const { image, name, id, price } = product;
+  const { name, id, price, image } = product;
   return (
     <>
       <div className="card product-card col-md-4" style={{ width: "18rem" }}>
