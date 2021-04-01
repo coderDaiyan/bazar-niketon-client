@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  const { name, id, price, image } = product;
+  const { name, _id, price, image } = product;
   return (
     <>
       <div className="card product-card col-md-4" style={{ width: "18rem" }}>
@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
           <div className="d-flex justify-content-between">
             <Link
               style={{ color: "white", textDecoration: "none" }}
-              to={`/checkout/${id}`}
+              to={`/checkout/${_id}`}
             >
               <button className="btn buy-now-btn btn-success">Buy Now</button>
             </Link>

@@ -1,19 +1,40 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import products from "../../fakeData/products.json";
+import { UserContext } from "../../App";
 import "./Checkout.css";
 
 const Checkout = () => {
+  const [orderedProduct, setOrderedProduct] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const { productId } = useParams();
-  const checkoutProduct = products.find((product) => product.id == productId);
-  console.log(checkoutProduct);
 
-  const { name, weight, price } = checkoutProduct;
+  useEffect(() => {
+    fetch(`http://localhost:4000/product/${productId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setOrderedProduct(data);
+      });
+  }, [productId]);
 
+  console.log(orderedProduct);
+
+  const { name, weight, price } = orderedProduct;
   const handleOrderPlaced = () => {
-    setOrderPlaced(true);
+    const newOrder = { ...loggedInUser, name, weight, price };
+    fetch("http://localhost:4000/addOder", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newOrder),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data) {
+          setOrderPlaced(true);
+        }
+      });
   };
 
   return (
@@ -47,22 +68,22 @@ const Checkout = () => {
             </div>
           </div>
         ) : (
-          <table class="table table-hover table-borderless">
+          <table class="table">
             <thead>
               <tr>
-                <th scope="col">Product Name</th>
+                <th scope="col">Name</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
               </tr>
-              <hr />
             </thead>
             <tbody>
               <tr>
-                <th scope="row">{name}</th>
+                <th style={{ fontSize: "20px" }} scope="row">
+                  {name}
+                </th>
                 <td>{weight}</td>
                 <td>৳{price}</td>
               </tr>
-              <hr />
               <tr>
                 <th colSpan="2" scope="row">
                   Total
@@ -84,3 +105,28 @@ const Checkout = () => {
 };
 
 export default Checkout;
+
+// <table class="table-hover table-borderless">
+// <thead>
+//   <tr>
+//     <th scope="col">Product Name</th>
+//     <th scope="col">Quantity</th>
+//     <th scope="col">Price</th>
+//   </tr>
+//   <hr />
+// </thead>
+// <tbody>
+//   <tr>
+//     <th scope="row">{name}</th>
+//     <td>{weight}</td>
+//     <td>৳{price}</td>
+//   </tr>
+//   <hr />
+//   <tr>
+//     <th colSpan="2" scope="row">
+//       Total
+//     </th>
+//     <td>৳{price}</td>
+//   </tr>
+// </tbody>
+// </table>

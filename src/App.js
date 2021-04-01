@@ -7,6 +7,7 @@ import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
+import Orders from "./Components/Orders/Orders";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
@@ -28,6 +29,10 @@ function App() {
               <Header />
               <Login />
             </Route>
+            <PrivateRoute path="/orders">
+              <Header />
+              <Orders />
+            </PrivateRoute>
             <PrivateRoute path="/admin">
               <Admin />
             </PrivateRoute>

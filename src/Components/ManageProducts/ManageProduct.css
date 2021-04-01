@@ -1,4 +1,4 @@
-.table {
+.tables {
   width: 900px;
   border: 2px solid black;
   margin: 20px auto;
@@ -7,22 +7,22 @@ tr th {
   font-size: 23px;
 }
 @media (max-width: 930px) {
-  .table {
+  .tables {
     width: 700px;
   }
 }
 @media (max-width: 722px) {
-  .table {
+  .tables {
     width: 600px;
   }
 }
 @media (max-width: 621px) {
-  .table {
+  .tables {
     width: 500px;
   }
 }
 @media (max-width: 530px) {
-  .table {
+  .tables {
     width: 400px;
   }
 }

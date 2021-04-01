@@ -28,7 +28,7 @@ const ManageProduct = () => {
   return (
     <>
       <div style={{ padding: "20px" }}>
-        <table class="table table-hover table-borderless">
+        <table class="table tables table-hover table-borderless">
           <thead>
             <tr>
               <th scope="col">Name</th>
