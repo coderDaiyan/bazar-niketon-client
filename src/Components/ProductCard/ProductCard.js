@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductDetail = ({ product }) => {
+const ProductCard = ({ product }) => {
   const { name, id, price, image } = product;
   return (
     <>
@@ -24,4 +24,4 @@ const ProductDetail = ({ product }) => {
   );
 };
 
-export default ProductDetail;
+export default ProductCard;

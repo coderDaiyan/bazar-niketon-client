@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
-import ProductDetail from "../ProductDetail/ProductDetail";
+import React, { useContext, useEffect } from "react";
+import { ProductContext } from "../../App";
+import ProductCard from "../ProductCard/ProductCard";
 import "./Home.css";
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useContext(ProductContext);
   useEffect(() => {
     fetch("http://localhost:4000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, [setProducts]);
   console.log(products);
   return (
     <div className="container mt-5 mb-5">
       <div className="row">
         {products.length !== 0 ? (
           products.map((product) => (
-            <ProductDetail key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} />
           ))
         ) : (
           <div style={{ textAlign: "center" }}>

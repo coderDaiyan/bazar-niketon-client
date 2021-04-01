@@ -10,40 +10,39 @@ import NotFound from "./Components/NotFound/NotFound";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
+export const ProductContext = createContext();
 
 function App() {
+  const [products, setProducts] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <Router>
-        <Switch>
-          <PrivateRoute path="/checkout/:productId">
-            <Header />
-            <Checkout />
-          </PrivateRoute>
-          <Route path="/login">
-            <Header />
-            <Login />
-          </Route>
-          <PrivateRoute path="/admin">
-            <Admin />
-          </PrivateRoute>
-          <PrivateRoute path="/manage-products"></PrivateRoute>
-          {/* <PrivateRoute path="admin/add-product">
-            <Admin />
-            <AddProduct />
-          </PrivateRoute> */}
-          <Route exact path="/">
-            <Header />
-            <Home />
-          </Route>
-          <Route path="*">
-            <Header />
-            <NotFound />
-          </Route>
-        </Switch>
-      </Router>
-    </UserContext.Provider>
+    <ProductContext.Provider value={[products, setProducts]}>
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+        <Router>
+          <Switch>
+            <PrivateRoute path="/checkout/:productId">
+              <Header />
+              <Checkout />
+            </PrivateRoute>
+            <Route path="/login">
+              <Header />
+              <Login />
+            </Route>
+            <PrivateRoute path="/admin">
+              <Admin />
+            </PrivateRoute>
+            <Route exact path="/">
+              <Header />
+              <Home />
+            </Route>
+            <Route path="*">
+              <Header />
+              <NotFound />
+            </Route>
+          </Switch>
+        </Router>
+      </UserContext.Provider>
+    </ProductContext.Provider>
   );
 }
 
