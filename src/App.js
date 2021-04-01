@@ -1,9 +1,7 @@
 import { createContext, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import AddProduct from "./Components/AddProduct/AddProduct";
 import Admin from "./Components/Admin/Admin";
-import AdminHeader from "./Components/AdminHeader/AdminHeader";
 import Checkout from "./Components/Checkout/Checkout";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
@@ -31,10 +29,10 @@ function App() {
             <Admin />
           </PrivateRoute>
           <PrivateRoute path="/manage-products"></PrivateRoute>
-          <PrivateRoute path="/addProduct">
-            <AdminHeader />
+          {/* <PrivateRoute path="admin/add-product">
+            <Admin />
             <AddProduct />
-          </PrivateRoute>
+          </PrivateRoute> */}
           <Route exact path="/">
             <Header />
             <Home />

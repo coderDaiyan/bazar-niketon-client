@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Switch, useRouteMatch } from "react-router-dom";
+import AddProduct from "../AddProduct/AddProduct";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const AdminHeader = () => {
+  let { path, url } = useRouteMatch();
   return (
     <>
       <nav
@@ -29,7 +32,7 @@ const AdminHeader = () => {
                 <Link
                   style={{ color: "white" }}
                   className="nav-link"
-                  to="/manage-products"
+                  to={`${url}/manage-products`}
                 >
                   Manage Products
                 </Link>
@@ -39,7 +42,7 @@ const AdminHeader = () => {
                   style={{ color: "white" }}
                   className="nav-link"
                   aria-current="page"
-                  to="/addProduct"
+                  to={`${url}/add-product`}
                 >
                   Add Product
                 </Link>
@@ -49,7 +52,7 @@ const AdminHeader = () => {
                   style={{ color: "white" }}
                   className="nav-link"
                   aria-current="page"
-                  to="/edit-product"
+                  to={`${url}/edit-product`}
                 >
                   Edit Product
                 </Link>
@@ -58,6 +61,12 @@ const AdminHeader = () => {
           </div>
         </div>
       </nav>
+
+      <Switch>
+        <PrivateRoute path={`${path}/add-product`}>
+          <AddProduct />
+        </PrivateRoute>
+      </Switch>
     </>
   );
 };
