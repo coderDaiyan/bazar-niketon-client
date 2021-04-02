@@ -38,7 +38,7 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data) {
+        if (data && imageUrl) {
           swal("Congratulations!", "Product Added!", "success");
         }
       });

@@ -10,6 +10,8 @@ const Checkout = () => {
   const [orderPlaced, setOrderPlaced] = useState(false);
   const { productId } = useParams();
 
+  const { email } = loggedInUser;
+
   useEffect(() => {
     fetch(`http://localhost:4000/product/${productId}`)
       .then((res) => res.json())
@@ -40,6 +42,7 @@ const Checkout = () => {
   return (
     <>
       <h3 style={{ margin: "20px", fontWeight: "700" }}>Checkout</h3>
+      <p className="ms-4">Email: {email}</p>
       <div className="parent">
         {orderPlaced ? (
           <div className="order-confirm">
