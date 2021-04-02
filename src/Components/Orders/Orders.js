@@ -22,30 +22,29 @@ const Orders = () => {
         You Have {orders.length} {orders.length <= 1 ? "Booking" : "Bookings"}
       </h5>
       <p className="ms-4 text-center">Email: {email}</p>
-      {orders.length > 0 && (
-        <div className="orders">
-          <table class="table table-hover">
-            <thead>
+
+      <div className="orders">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.map((order) => (
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Date</th>
+                <td>{order.name}</td>
+                <td>${order.price}</td>
+                <td>01</td>
+                <td>{order.date}</td>
               </tr>
-            </thead>
-            <tbody>
-              {orders.map((order) => (
-                <tr>
-                  <td>{order.name}</td>
-                  <td>${order.price}</td>
-                  <td>01</td>
-                  <td>{order.date}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
