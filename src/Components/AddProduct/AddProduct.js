@@ -31,7 +31,7 @@ const AddProduct = () => {
       price: productPrice,
       image: imageUrl,
     };
-    fetch("http://localhost:4000/addProduct", {
+    fetch("https://glacial-refuge-60691.herokuapp.com/addProduct", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(productData),

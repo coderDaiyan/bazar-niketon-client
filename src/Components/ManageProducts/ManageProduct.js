@@ -6,13 +6,13 @@ import "./ManageProduct.css";
 const ManageProduct = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/products")
+    fetch("https://glacial-refuge-60691.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:4000/delete/${id}`, {
+    fetch(`https://glacial-refuge-60691.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

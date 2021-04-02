@@ -11,6 +11,8 @@ const Orders = () => {
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [loggedInUser]);
+
+  console.log(orders);
   return (
     <>
       <div className="d-flex justify-content-center m-5">

@@ -6,7 +6,7 @@ import "./Home.css";
 const Home = () => {
   const [products, setProducts] = useContext(ProductContext);
   useEffect(() => {
-    fetch("http://localhost:4000/products")
+    fetch("https://glacial-refuge-60691.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [setProducts]);

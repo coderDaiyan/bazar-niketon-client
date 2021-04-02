@@ -13,19 +13,22 @@ const Checkout = () => {
   const { email } = loggedInUser;
 
   useEffect(() => {
-    fetch(`http://localhost:4000/product/${productId}`)
+    fetch(`https://glacial-refuge-60691.herokuapp.com/product/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setOrderedProduct(data);
       });
   }, [productId]);
 
-  console.log(orderedProduct);
-
   const { name, weight, price } = orderedProduct;
   const handleOrderPlaced = () => {
-    const newOrder = { ...loggedInUser, name, weight, price };
-    fetch("http://localhost:4000/addOder", {
+    const newOrder = {
+      ...loggedInUser,
+      name,
+      weight,
+      price,
+    };
+    fetch("https://glacial-refuge-60691.herokuapp.com/addOder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newOrder),
