@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
   return (
     <>
       <div className="card product-card col-md-4" style={{ width: "18rem" }}>
-        <img src={image} className="card-img-top" alt="..." />
+        <img src={image} className="card-img-top img-fluid" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <div className="d-flex justify-content-between">

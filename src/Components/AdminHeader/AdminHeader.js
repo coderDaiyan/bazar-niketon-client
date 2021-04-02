@@ -38,15 +38,6 @@ const AdminHeader = () => {
                   Add Product
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  aria-current="page"
-                  to={`${url}/edit-product`}
-                >
-                  Edit Product
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

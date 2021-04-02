@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -20,6 +21,8 @@ const Checkout = () => {
       });
   }, [productId]);
 
+  const date = moment(new Date()).format("LLLL");
+
   const { name, weight, price } = orderedProduct;
   const handleOrderPlaced = () => {
     const newOrder = {
@@ -27,6 +30,7 @@ const Checkout = () => {
       name,
       weight,
       price,
+      date,
     };
     fetch("https://glacial-refuge-60691.herokuapp.com/addOder", {
       method: "POST",
@@ -111,28 +115,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
-// <table class="table-hover table-borderless">
-// <thead>
-//   <tr>
-//     <th scope="col">Product Name</th>
-//     <th scope="col">Quantity</th>
-//     <th scope="col">Price</th>
-//   </tr>
-//   <hr />
-// </thead>
-// <tbody>
-//   <tr>
-//     <th scope="row">{name}</th>
-//     <td>{weight}</td>
-//     <td>৳{price}</td>
-//   </tr>
-//   <hr />
-//   <tr>
-//     <th colSpan="2" scope="row">
-//       Total
-//     </th>
-//     <td>৳{price}</td>
-//   </tr>
-// </tbody>
-// </table>

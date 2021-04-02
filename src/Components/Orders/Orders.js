@@ -12,7 +12,7 @@ const Orders = () => {
       .then((data) => setOrders(data));
   }, [loggedInUser]);
 
-  console.log(orders);
+  const { email } = loggedInUser;
   return (
     <>
       <div className="d-flex justify-content-center m-5">
@@ -21,26 +21,31 @@ const Orders = () => {
       <h5 className="text-center">
         You Have {orders.length} {orders.length <= 1 ? "Booking" : "Bookings"}
       </h5>
-      <div className="orders">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((order) => (
+      <p className="ms-4 text-center">Email: {email}</p>
+      {orders.length > 0 && (
+        <div className="orders">
+          <table class="table table-hover">
+            <thead>
               <tr>
-                <td>{order.name}</td>
-                <td>${order.price}</td>
-                <td>{new Date().toLocaleDateString()}</td>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {orders.map((order) => (
+                <tr>
+                  <td>{order.name}</td>
+                  <td>${order.price}</td>
+                  <td>01</td>
+                  <td>{order.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </>
   );
 };
