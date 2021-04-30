@@ -7,7 +7,9 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/orders?email=${loggedInUser.email}`)
+    fetch(
+      `https://glacial-refuge-60691.herokuapp.com/orders?email=${loggedInUser.email}`
+    )
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [loggedInUser]);

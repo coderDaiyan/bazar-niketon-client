@@ -21,19 +21,14 @@
 
 ## Features in this Project
 
-- In the Home Page there are some products which are loaded from
-  **Backend API**
-- If any User Clicks on **_Buy Now_** Button, There is an authentication system user is logged in or not. If logged in, User can go to checkout page and at a time user can order only one product.
-- There is a Orders page on navigation bar where if user ordered any product in past user can see the orders they ordered in past.
-  By the way, there is also an authentication system 😎
-- There is a another page named Admin. This is also will be a private route where user needs to authenticate himself. Then, There are **2 Options**.
-
-  - Manage Products
-  - Add Product
-
-- In Manage Product, User can delete products by user's wish, And if the product deleted this will remove also from **Homepage** and **Database**
-- In Add Product, User can add any product and It will be uploaded in **HomePage** and **Database**
-- There is a spinner also in HomePage and Manage-Product, The spinner will rotate until the data arrives.
+- On the Home Page, there are some products loaded from the **backend API**.
+- If any User Clicks on Buy Now Button, There is an authentication system user is logged in or not. If logged in, the user can go to the checkout page and at a time the user can order only one product.
+- There is an Orders page on the navigation bar where if a user ordered any product in the past, the user can see the orders they ordered in the past. There is also an authentication system.
+- Admin can add products.
+- Admin can manage products.
+- In Manage Product, the User can delete products by user's wish, And if the product deleted this will remove also from **Homepage** and **Database**.
+- In Add Product, the User can add any product and It will be uploaded in **HomePage** and **Database**.
+- There is a spinner also in HomePage and Manage-Product, The spinner will visible until the data arrives.
 - This is a Responsive Website Also. User can visit from any device he wants.
 
 <br>
