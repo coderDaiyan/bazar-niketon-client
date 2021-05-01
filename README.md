@@ -1,5 +1,7 @@
 # Bazar Niketon Client Side Repository
 
+## This is a E-Commerce Shop where User can buy products and order.
+
 ### This is the client side code of Bazar Niketon Project.You'll find the
 
 **server side repo** below
