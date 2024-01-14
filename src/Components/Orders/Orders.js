@@ -8,7 +8,7 @@ const Orders = () => {
 
   useEffect(() => {
     fetch(
-      `https://glacial-refuge-60691.herokuapp.com/orders?email=${loggedInUser.email}`
+      `https://bazar-niketon.onrender.com/orders?email=${loggedInUser.email}`
     )
       .then((res) => res.json())
       .then((data) => setOrders(data));

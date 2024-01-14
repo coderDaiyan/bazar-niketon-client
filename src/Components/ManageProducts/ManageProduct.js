@@ -7,13 +7,13 @@ import "./ManageProduct.css";
 const ManageProduct = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://glacial-refuge-60691.herokuapp.com/products")
+    fetch("https://bazar-niketon.onrender.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`https://glacial-refuge-60691.herokuapp.com/delete/${id}`, {
+    fetch(`https://bazar-niketon.onrender.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

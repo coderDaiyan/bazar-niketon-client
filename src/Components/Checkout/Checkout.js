@@ -14,7 +14,7 @@ const Checkout = () => {
   const { email } = loggedInUser;
 
   useEffect(() => {
-    fetch(`https://glacial-refuge-60691.herokuapp.com/product/${productId}`)
+    fetch(`https://bazar-niketon.onrender.com/product/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setOrderedProduct(data);
@@ -32,7 +32,7 @@ const Checkout = () => {
       price,
       date,
     };
-    fetch("https://glacial-refuge-60691.herokuapp.com/addOder", {
+    fetch("https://bazar-niketon.onrender.com/addOder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newOrder),

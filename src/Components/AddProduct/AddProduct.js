@@ -31,7 +31,7 @@ const AddProduct = () => {
       price: productPrice,
       image: imageUrl,
     };
-    fetch("https://glacial-refuge-60691.herokuapp.com/addProduct", {
+    fetch("https://bazar-niketon.onrender.com/addProduct", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(productData),
